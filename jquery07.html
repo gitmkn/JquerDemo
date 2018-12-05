@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择颜色填充方块</title>
+    <style>
+        .red {
+            color:red;
+        }
+    </style>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                $('div').removeClass('red');
+            });
+            $('#btn2').click(function () {
+                $('div').addClass('red');
+            });
+            $('div').click(function () {
+                $('div').toggleClass('red');
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="red">adsfasdfklas;djfas</div>
+<button id="btn1">变黑</button>
+<button id="btn2">变红</button>
+
+</body>
+</html>

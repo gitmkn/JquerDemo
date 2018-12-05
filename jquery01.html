@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        div{
+            color:red;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('div').css('color','red');
+            $('.mydiv').css('fontSize','70px');
+            $('#mydiv').css('backgroundColor','blue');
+        });
+    </script>
+</head>
+<body>
+    <div id="mydiv">
+        hello<br>
+        world
+    </div>
+    <hr>
+    <div class="mydiv">
+        hello<br>
+        world
+    </div>
+</body>
+</html>

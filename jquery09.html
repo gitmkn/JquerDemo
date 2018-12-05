@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择颜色填充方块</title>
+    <style>
+        ul{
+            display: none;
+        }
+        .box{
+            display: block;
+        }
+    </style>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            $('input').click(function () {
+                $('ul').toggleClass('box');
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="点击">
+<ul>
+    <li>11111</li>
+    <li>11111</li>
+    <li>11111</li>
+    <li>11111</li>
+    <li>11111</li>
+</ul>
+</body>
+</html>

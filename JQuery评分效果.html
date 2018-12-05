@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <style>
+        li {
+            float: left;
+            width: 50px;
+            height: 50px;
+            background: green;
+            margin: 5px;
+            list-style: none;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+
+        var isOk = false;
+        $(function(){
+
+            $('li').mouseover(function () {
+                if(isOk == true)
+                {
+                    return
+                }
+                var index = $(this).index()
+                console.log(index)
+
+                $('li').each(function (idx,item) {
+                    if(idx > index)
+                    {
+                        ;
+                    }
+                    else
+                    {
+                        $(item).css('backgroundColor','blue')
+                    }
+                })
+            }).mouseout(function () {
+                if(isOk == false)
+                {
+                    $('li').css('backgroundColor','green')
+                }
+
+            })
+
+            $('li').click(function () {
+                isOk = true;
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>

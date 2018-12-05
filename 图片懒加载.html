@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片懒加载</title>
+    <style>
+        div{
+            margin-top: 300px;
+            width: 470px;
+            height: 150px;
+            border: 1px solid black;
+        }
+    </style>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            toChange();
+            function toChange() {
+                $('img').each(function (index,elem){
+                    if($(window).height()+$(document).scrollTop() > $(elem).offset().top){
+                        var pic = $(elem).attr('_src');
+                        $(elem).attr('src',pic);
+                    }
+                });
+            }
+            $(window).scroll(function () {
+                toChange();
+            });
+        });
+    </script>
+</head>
+<body>
+<div><img _src="img/1.jpg" title=""></div>
+<div><img _src="img/2.jpg" title=""></div>
+<div><img _src="img/3.jpg" title=""></div>
+<div><img _src="img/4.jpg" title=""></div>
+<div><img _src="img/5.jpg" title=""></div>
+</body>
+</html>

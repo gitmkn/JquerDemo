@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            font-size: 50px;
+        }
+    </style>
+    <script>
+        var count = 1;
+        var timeID = 0;
+        
+        function startTimer() {
+            timeID = setInterval(function () {
+                var p = document.getElementById('pp');
+                p.innerHTML = count;
+                count++;
+            },200);
+        }
+        window.onload = function start() {
+            startTimer()
+
+            var btn = document.getElementById('btn1');
+            btn.onclick = function () {
+                clearInterval(timeID);
+            }
+
+            var btn = document.getElementById('btn2');
+            btn.onclick = function () {
+                start();
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="btn1" value="停">
+<input type="button" id="btn2" value="开始">
+<p id="pp">1</p>
+</body>
+</html>

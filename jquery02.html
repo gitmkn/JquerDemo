@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择颜色填充方块</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            float: left;
+            margin: 10px;
+        }
+    </style>
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+<span>red</span>
+<span>yellow</span>
+<span>green</span>
+<span>blue</span>
+<br>
+<div>1</div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+    var color = '';
+    $('span').click(function () {
+        color = $(this).text();
+    });
+
+    $('div').click(function () {
+        $(this).css('backgroundColor', color);
+    });
+</script>
+</body>
+</html>

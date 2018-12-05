@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js"></script>
+    <style>
+        body{
+            width:380px;
+        }
+        div {
+             width: 100px;
+             height: 100px;
+             border: 1px solid #000;
+             float: left;
+             margin: 10px;
+        }
+    </style>
+    <script>
+        var count = 1;
+        var timeID = 0;
+        
+        function startTimer() {
+            timeID = setInterval(function () {
+//                var p = document.getElementById('pp');
+//                p.innerHTML = count;
+                var count1 = count - 1;
+                if(count == 9){
+                    $('div[id=div'+count1+']').css('backgroundColor','');
+                    $('div[id=div'+count+']').css('backgroundColor', 'red');
+                    count = 1;
+                }else{
+                    if(count == 1){
+                        $('div[id=div9]').css('backgroundColor','');
+                    }
+                    $('div[id=div'+count1+']').css('backgroundColor','');
+                    $('div[id=div'+count+']').css('backgroundColor', 'red');
+                    count++;
+                }
+
+            },100);
+        }
+
+
+        window.onload = function start() {
+            startTimer()
+
+            var btn = document.getElementById('btn1');
+            btn.onclick = function () {
+                var count2 = count - 1;
+                var p = document.getElementById('pp');
+                p.innerHTML = "抽中了"+count2+"等奖";
+                clearInterval(timeID);
+            }
+
+            var btn = document.getElementById('btn2');
+            btn.onclick = function () {
+                start();
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="btn1" value="停">
+<input type="button" id="btn2" value="开始">
+<p id="pp">1</p>
+<br>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<div id="div4"></div>
+<div id="div5"></div>
+<div id="div6"></div>
+<div id="div7"></div>
+<div id="div8"></div>
+<div id="div9"></div>
+</body>
+</html>
